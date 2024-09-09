@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Dynamic Resume Generator</h1>
+            <hr>
+            <div class="form">
+                <div class="intro">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name">
+                </div>
+
+                <div class="intro">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name">
+                </div>
+            </div>
+
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+
+        
+                <div class="intro">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" placeholder="Enter your phone number">
+                </div>
+
+                <div class="intro">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter your Address">
+                </div>
+                <div class="intro">
+                    <label for="address">Skills</label>
+                    <input type="text" id="skills" placeholder="Enter your skills">
+                </div>
+        
+                <div class="intro">
+                    <label for="">Education</label>
+                    <input type="text" id="education" placeholder="Enter your Education">
+                </div>
+        
+                <div class="intro">
+                    <label for="address">Experience</label>
+                    <input type="text" id="experience" placeholder="Enter your Experience">
+                </div>
+            
+                <div class="intro">
+                    <label for="address">Courses</label>
+                    <input type="text" id="courses" placeholder="Enter your Courses(if any)">
+                </div>
+            
+                <div class="intro">
+                    <label for="summary">Summary</label>
+                    <textarea id="summary" placeholder="Write a brief summary"></textarea>
+            </div>
+            <button id="generateResume" type="submit">Generate Resume</button>
+        </div>
+
+        <div class="box1">
+            <div class="showing-info">
+                <h2>Your Dynamic Resume</h2>
+                <p id="display-name"><strong>Name :</strong><span id="displayName"></span></p>
+                <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+                <p><strong>Skills:</strong>
+                    <ul id="displaySkills"></ul> <!-- Skills list will be inserted here -->
+                </p>
+                <p><strong>Experience:</strong> <span id="displayExperience"></span></p>
+                <p><strong>Address:</strong> <span id="displayAddress"></span></p>
+                <p><strong>Summary:</strong> <span id="displaySummary"></span></p>
+                <p><strong>Education:</strong> <span id="displayEducation"></span></p>
+                <p><strong>Courses:</strong> <span id="displayCourses"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
