@@ -1,49 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("generateResume")
-    .addEventListener("click", function () {
+    document.getElementById("generateResume").addEventListener("click", function () {
       const firstName = document.getElementById("firstName").value;
       const lastName = document.getElementById("lastName").value;
       const email = document.getElementById("email").value;
       const phone = document.getElementById("phone").value;
-      const skills = document.getElementById("skills").value.split(",");
+      const skillsInput = document.getElementById("skills").value;
       const experience = document.getElementById("experience").value;
       const education = document.getElementById("education").value;
       const address = document.getElementById("address").value;
       const courses = document.getElementById("courses").value;
       const summary = document.getElementById("summary").value;
-
-      document.getElementById("displayName").innerText =
-        firstName + " " + lastName;
+  
+      // Display the text information
+      document.getElementById("displayName").innerText = firstName + " " + lastName;
       document.getElementById("displayEmail").innerText = email;
       document.getElementById("displayPhone").innerText = phone;
-      document.getElementById("displaySkills").innerText = skills;
       document.getElementById("displayExperience").innerText = experience;
       document.getElementById("displayEducation").innerText = education;
       document.getElementById("displayAddress").innerText = address;
       document.getElementById("displayCourses").innerText = courses;
       document.getElementById("displaySummary").innerText = summary;
-
+  
+      // Process and display skills
       const skillsList = document.getElementById("displaySkills");
       skillsList.innerHTML = ""; // Clear any previous entries
-
-      // Check if skills array is empty
-      if (skills.trim() === "") {
-        // If the skills string is empty, you can leave the skills list empty
-        skillsList.innerHTML = "";
-      } else {
-        // Split the skills string into an array if it's not empty
-        const skillsArray = skills.split(",").map((skill) => skill.trim());
-
-        // Process each skill and add it to the list
-        skillsArray.forEach((skill) => {
-          if (skill) {
-            // Check if the skill is not an empty string
-            const li = document.createElement("li"); // Create a new list item
-            li.innerText = skill; // Set the text of the list item
-            skillsList.appendChild(li); // Append the list item to the skills list
-          }
-        });
-      }
+  
+      // Split the skills input into an array and trim each skill
+      const skillsArray = skillsInput.split(",").map(skill => skill.trim());
+  
+      // Process each skill and add it to the list
+      skillsArray.forEach(skill => {
+        if (skill) {
+          // Check if the skill is not an empty string
+          const li = document.createElement("li"); // Create a new list item
+          li.innerText = skill; // Set the text of the list item
+          skillsList.appendChild(li); // Append the list item to the skills list
+        }
+      });
     });
-});
+  });
+  
